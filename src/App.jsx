@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState } from "react";
+import { MdDelete } from "react-icons/md";
 function App() {
   const [register, setRegister] = useState([]);
 
@@ -78,7 +79,7 @@ function App() {
               Register
             </button>
           </div>
-          <div className="bg-gray-300  w-[50%] h-[50vh]">
+          <div className="bg-gray-300  w-[50%] h-[50vh] overflow-y-scroll ">
             {register.length > 0 ? (
               register.map((i) => {
                 return (
@@ -86,24 +87,28 @@ function App() {
                     <div className="flex space-x-6 py-8 justify-center">
                       <div className="text-center">
                         <h1 className="text-lg font-bold ">Name</h1>
+                      <hr />
+
                         {i.name}
                       </div>
                       <div className="text-center">
                         <h1 className="text-lg font-bold ">Phone Number</h1>
+                      <hr />
+
                         {i.num}
                       </div>
                       <div className="text-center">
                         <h1 className="text-lg font-bold ">Email</h1>
-
+                      <hr />
                         {i.email}
                       </div>
                       <button
                         onClick={() => {
                           deletee(i);
                         }}
-                        className="bg-red-400 py-1 text-white px-3 rounded-md"
+                        className="bg-red-400 text-white px-3 rounded-md"
                       >
-                        delete
+                        <MdDelete />
                       </button>
                     </div>
                   </>
